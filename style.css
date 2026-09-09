@@ -31,34 +31,48 @@ body {
 
 /* encabezado */
 .header {
-  /* IMAGEN DE FONDO PROFESIONAL */
-  background-image: url('mic.jpg'); /* Asegúrate de que el nombre coincida */
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px; /* Redondea la imagen */
-  
-  /* Capa oscura para que el texto se lea bien */
   position: relative;
-  z-index: 1;
-  
-  /* Estilo original de tu header */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
+  border-radius: 20px;
   margin-bottom: 2.5rem;
   border-bottom: 2px solid #c29a6b;
-  padding: 2.5rem 1.5rem 1.2rem; /* Ajusta el padding para que respire */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px; /* Altura mínima para que se vea bien la foto */
+  padding: 2rem;
 }
 
-/* Sombreado oscuro sobre la imagen (capa semitransparente) */
+/* La imagen de fondo */
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen se adapta sin deformarse */
+  z-index: 0;
+}
+
+/* Capa oscura encima de la imagen */
 .header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(10, 8, 8, 0.7); /* Ajusta el 0.7 para más o menos oscuridad */
-  z-index: -1;
+  background: rgba(10, 8, 8, 0.6); /* Un poco menos oscuro para que se vea la foto */
+  z-index: 1;
+}
+
+/* El contenido (título y slogan) */
+.header-content {
+  position: relative;
+  z-index: 2; /* Por encima de la imagen y la capa oscura */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  gap: 1rem;
 }
 
 .band-title h1 {
