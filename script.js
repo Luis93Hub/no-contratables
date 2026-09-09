@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  // DATOS DE CANCIONES (orden, título, enlace YouTube)
+  // DATOS DE CANCIONES
   const songs = [
     { title: "Granito de mostaza", url: "https://youtu.be/U5vImS5ZJTo" },
     { title: "Alaba", url: "https://youtu.be/9BH0tjYJFJU" },
@@ -67,10 +67,10 @@
     metaDiv.appendChild(playerWrapper);
     card.appendChild(metaDiv);
 
-    // Footer
+    // Footer (CORREGIDO: se agregó el cierre de comillas correcto)
     const footerSong = document.createElement('div');
     footerSong.className = 'song-footer';
-    footerSong.innerHTML = `<i class="fas fa-headphones-alt"></i> track ${index+1} · Los Pro;
+    footerSong.innerHTML = `<i class="fas fa-headphones-alt"></i> track ${index+1} · Los Pro`;
     card.appendChild(footerSong);
 
     return card;
