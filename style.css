@@ -29,49 +29,46 @@ body {
   transition: 0.3s;
 }
 
-/* encabezado */
+/* HEADER CON IMAGEN */
 .header {
   position: relative;
   border-radius: 20px;
   margin-bottom: 2.5rem;
-  border-bottom: 2px solid #c29a6b;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 280px; /* Altura mínima para que se vea bien la foto */
-  padding: 2rem;
+  min-height: 300px; /* Altura fija para que se vea bien la foto */
+  border-bottom: 2px solid #c29a6b;
 }
 
-/* La imagen de fondo */
 .header-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* La imagen se adapta sin deformarse */
+  object-fit: cover;
   z-index: 0;
 }
 
-/* Capa oscura encima de la imagen */
 .header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(10, 8, 8, 0.6); /* Un poco menos oscuro para que se vea la foto */
+  background: rgba(10, 8, 8, 0.6);
   z-index: 1;
 }
 
-/* El contenido (título y slogan) */
 .header-content {
   position: relative;
-  z-index: 2; /* Por encima de la imagen y la capa oscura */
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  padding: 2rem;
   gap: 1rem;
 }
 
@@ -100,10 +97,8 @@ body {
   backdrop-filter: blur(2px);
   border: 1px solid #8f6f4b;
   letter-spacing: 0.3px;
-
-    /* ... tu estilo actual ... */
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Sombra para el texto */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Sombra para la pastilla */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .slogan i {
@@ -111,7 +106,7 @@ body {
   color: #dba563;
 }
 
-/* grid de canciones */
+/* GRID DE CANCIONES */
 .song-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -224,7 +219,7 @@ body {
   margin-right: 4px;
 }
 
-/* pie de página */
+/* FOOTER */
 .footer-note {
   margin-top: 2.8rem;
   text-align: center;
@@ -260,7 +255,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* responsive */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .card { padding: 1.5rem 1rem; }
   .band-title h1 { font-size: 2.4rem; }
@@ -269,19 +264,25 @@ body {
   .player-wrapper iframe { width: 100px; height: 50px; }
   .btn-youtube { font-size: 0.8rem; padding: 0.2rem 0.8rem; }
   
-  /* NUEVO: Ajusta el header en móviles */
+  /* Header en móviles */
   .header {
-    padding: 2rem 1rem 1rem;
-    border-radius: 15px;
+    min-height: 200px;
+  }
+  .header-content {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  .slogan { align-self: flex-start; }
+  .header-content {
+    align-items: flex-start;
+  }
 }
 
-/* scroll personalizado */
+/* SCROLL PERSONALIZADO */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1a1512; }
 ::-webkit-scrollbar-thumb { background: #7a6045; border-radius: 10px; }
