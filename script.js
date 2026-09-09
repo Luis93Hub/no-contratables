@@ -70,7 +70,7 @@
     // Footer
     const footerSong = document.createElement('div');
     footerSong.className = 'song-footer';
-    footerSong.innerHTML = `<i class="fas fa-headphones-alt"></i> track ${index+1} · Los No Contratables`;
+    footerSong.innerHTML = `<i class="fas fa-headphones-alt"></i> track ${index+1} · Los Pro;
     card.appendChild(footerSong);
 
     return card;
@@ -85,5 +85,5 @@
     });
   }
 
-  console.log('🎸 Los No Contratables · "tocamos por un pedazo de pan"');
+  console.log('🎸 Los Pro · "Immeasurable God"');
 })();
